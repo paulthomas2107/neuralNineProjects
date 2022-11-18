@@ -4,7 +4,7 @@ import requests
 VERSION = "2.5"
 BASE_URL = "http://api.openweathermap.org/data/" + VERSION + "/weather?"
 API_KEY = open('api.key', 'r').read()
-CITY = "Moscow"
+CITY = "Manilla"
 
 
 def kelvinToCelsiusAndFahrenheit(kelvin):
