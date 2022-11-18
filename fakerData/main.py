@@ -1,7 +1,7 @@
 import random
 
 from faker import Faker
-from faker.providers import BaseProvider
+from faker.providers import BaseProvider, DynamicProvider
 
 f = Faker(["en_GB", "nl_NL"])
 
@@ -36,7 +36,20 @@ class PaulProvider(BaseProvider):
     def food_category():
         return random.choice(['Chinese', 'Japanese', 'Spanish', 'Indian', 'American', 'Italian'])
 
+    @staticmethod
+    def food_title():
+        return "TITLE"
+
 
 f = Faker()
 f.add_provider(PaulProvider)
 print(f.food_category())
+print(f.food_title())
+
+language_provider = DynamicProvider(
+    provider_name="programming_language",
+    elements=["Java", "Cobol", "C++", "Python", "JavaScript"]
+)
+
+f.add_provider(language_provider)
+print(f.programming_language())
