@@ -86,13 +86,29 @@ def star2(x, y):
     turtle.penup()
 
 
+def trippy():
+    colors = ["red", "yellow", "blue", "orange", "purple", "green"]
+
+    turtle.speed(400)
+    turtle.bgcolor("black")
+
+    for x in range(360):
+        turtle.pencolor(colors[x % 6])
+        turtle.width(x // 100 + 1)
+        turtle.forward(x)
+        turtle.left(59)
+
+    turtle.done()
+
+
 t = turtle.Turtle()
 
 t.clear()
 
 # simple_poly()
 # use_square()
-use_star2()
+# use_star2()
+trippy()
 
 
 turtle.done()
