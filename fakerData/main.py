@@ -5,8 +5,6 @@ from faker.providers import BaseProvider, DynamicProvider
 
 f = Faker(["en_GB", "nl_NL"])
 
-
-
 print(f.name())
 print(f.address())
 print(f.county())
