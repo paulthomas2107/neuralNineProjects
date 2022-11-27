@@ -1,5 +1,6 @@
 import datetime as dt
 import requests
+import sys
 
 VERSION = "2.5"
 BASE_URL = "http://api.openweathermap.org/data/" + VERSION + "/weather?"
@@ -27,6 +28,10 @@ description = response['weather'][0]['description']
 sunrise_time = dt.datetime.utcfromtimestamp(response['sys']['sunrise'] + response['timezone'])
 sunset_time = dt.datetime.utcfromtimestamp(response['sys']['sunset'] + response['timezone'])
 
+print("Python version")
+print (sys.version)
+print("Version info.")
+print (sys.version_info)
 print(f"Temperature.......in {CITY}:{temp_celsius: .2f}°C or{temp_fahrenheit: .2f}°F")
 print(f"Feels like........in {CITY}:{feels_like_celsius: .2f}°C or{feels_like_fahrenheit: .2f}°F")
 print(f"Humidity..........in {CITY}:{humidity: .2f}%")
