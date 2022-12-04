@@ -1,5 +1,5 @@
 import pyotp
-import qrcode
+# import qrcode
 
 # key = pyotp.random_base32()
 # print(key)
@@ -28,7 +28,7 @@ for _ in range(5):
 """
 
 # uri = pyotp.totp.TOTP(key).provisioning_uri(name="paulthomas",
-  #                                          issuer_name="Pauls App")
+#                                          issuer_name="Pauls App")
 
 # print(uri)
 
