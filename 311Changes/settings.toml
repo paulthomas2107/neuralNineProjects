@@ -1,0 +1,20 @@
+# TOML
+title = 'TOML file'
+
+[server]
+ip = '192.168.0.1'
+port = 8080
+
+[players]
+    [player1]
+    name = "Paul"
+    age = 33
+    role = "Guesser"
+
+     [player2]
+     name = "Test"
+     age = 34
+     role = "Tester"
+
+[settings]
+banned_numbers = [100, 123, 888]
