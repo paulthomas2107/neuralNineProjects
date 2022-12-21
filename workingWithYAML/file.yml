@@ -1,0 +1,9 @@
+address:
+  city: Manchester
+  zip: CA90210
+age: 33
+languages:
+- Java
+- Python
+- C++
+name: Paul

@@ -1,0 +1,14 @@
+address: &address
+  street: My Fancy Street 15
+  city: Manchester
+  state: New York
+
+person1:
+  name: Paul
+  age: 44
+  address: *address
+
+person2:
+  name: Bob
+  age: 22
+  address: *address
