@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="f08e2fa7-21e1-4dc4-8b83-e57fc58c9642">
-      <console name="Connection" type="STANDARD" schema="database" session="Main"><![CDATA[select * from main.birthday_reminder]]></console>
+      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[select * from expenses]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -49,7 +49,7 @@
           <port value="" />
           <database value="" />
           <files>
-            <file path="$PROJECT_DIR$/telegramBot/database.db" schema="main" />
+            <file path="$PROJECT_DIR$/expenseTracker/expenses.db" schema="main" />
             <file path="" schema="database" />
           </files>
           <type value="NONE" />
