@@ -1,8 +1,23 @@
 import socket
 
+tries = int(input("Tries: "))
+max_number = int(input("Max Number: ").encode())
+role = input("Role: ")
+
+config_string = f"{tries}-{max_number}-{role}"
+
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(("127.0.0.1", 9999))
 
+client.send(config_string.encode())
+
 print(client.recv(1024).decode())
 client.send(input().encode())
-print(client.recv(1024).decode())
+
+while True:
+    message = client.recv(1024).decode()
+    print(message)
+    if "tries" in message or "lost" in message or "Invalid" in message:
+        break
+    if role == "guesser":
+        client.send(input().encode())
