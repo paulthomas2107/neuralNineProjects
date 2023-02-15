@@ -35,6 +35,20 @@ def plot_data(data, indicators, sync_axis=None):
     p.vbar(df.index[gain], width, df.Open[gain], df.Close[gain], fill_color="#00ff00", line_color="#00ff00")
     p.vbar(df.index[loss], width, df.Open[loss], df.Close[loss], fill_color="#ff0000", line_color="#ff0000")
 
+    for indicator in indicators:
+        if indicator == "30 Day SMA":
+            df['SMA30'] = df['Close'].rolling(30).mean()
+            p.line(df.index, df.SMA30, color='purple', legend_label="30 Day SMA")
+        elif indicator == "100 Day SMA":
+            df['SMA100'] = df['Close'].rolling(100).mean()
+            p.line(df.index, df.SMA100, color='purple', legend_label="100 Day SMA")
+        elif indicator == "Linear Regression Line":
+            par = np.polyfit(range(len(df.index.values)), df.Close.values, 1, full=True)
+            slope = par[0][0]
+            intercept = par[0][1]
+            y_predict = [slope * i + intercept for i in range(len(df.index.values))]
+            p.segment(df.index[0], y_predict[0], df.index[-1], y_predict[-1])
+
     return p
 
 
