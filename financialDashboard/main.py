@@ -41,7 +41,7 @@ def plot_data(data, indicators, sync_axis=None):
             p.line(df.index, df.SMA30, color='purple', legend_label="30 Day SMA")
         elif indicator == "100 Day SMA":
             df['SMA100'] = df['Close'].rolling(100).mean()
-            p.line(df.index, df.SMA100, color='purple', legend_label="100 Day SMA")
+            p.line(df.index, df.SMA100, color='blue', legend_label="100 Day SMA")
         elif indicator == "Linear Regression Line":
             par = np.polyfit(range(len(df.index.values)), df.Close.values, 1, full=True)
             slope = par[0][0]
@@ -49,6 +49,9 @@ def plot_data(data, indicators, sync_axis=None):
             y_predict = [slope * i + intercept for i in range(len(df.index.values))]
             p.segment(df.index[0],
                       y_predict[0], df.index[-1], y_predict[-1], legend_label="Linear Regression", color="red")
+
+        p.legend.location = "top_left"
+        p.legend.click_policy = "hide"
 
     return p
 
