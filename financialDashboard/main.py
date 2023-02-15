@@ -47,7 +47,8 @@ def plot_data(data, indicators, sync_axis=None):
             slope = par[0][0]
             intercept = par[0][1]
             y_predict = [slope * i + intercept for i in range(len(df.index.values))]
-            p.segment(df.index[0], y_predict[0], df.index[-1], y_predict[-1])
+            p.segment(df.index[0],
+                      y_predict[0], df.index[-1], y_predict[-1], legend_label="Linear Regression", color="red")
 
     return p
 
