@@ -30,7 +30,7 @@ def index():
 @app.route("/polls/<id>")
 def polls(id):
     poll = polls_df.loc[int(id)]
-    return str(poll)
+    return render_template("show_poll.html", poll=poll)
 
 
 @app.route("/polls", methods=["GET", "POST"])

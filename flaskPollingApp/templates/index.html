@@ -11,5 +11,6 @@
         <li><a href="{{ url_for("polls", id=key) }}">{{ value['poll']}}</a></li>
         {% endfor %}
     </ul>
+    <a href="{{ url_for("create_poll") }}">Create New Poll</a>
 </body>
 </html>
