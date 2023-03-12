@@ -36,7 +36,7 @@ def polls(id):
 @app.route("/polls", methods=["GET", "POST"])
 def create_poll():
     if request.method == "GET":
-        pass
+        return render_template("new_poll.html")
     elif request.method == "POST":
         pass
 
