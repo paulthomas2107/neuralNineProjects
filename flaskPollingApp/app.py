@@ -49,7 +49,9 @@ def create_poll():
 
 @app.route("/vote/<id>/<option>")
 def vote(id, option):
-    pass
+    polls_df.at[int(id), "votes"+str(option)] += 1
+    polls_df.to_csv("polls.csv")
+    return redirect(url_for("polls", id=id))
 
 
 if __name__ == "__main__":
