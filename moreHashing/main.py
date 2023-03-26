@@ -22,5 +22,10 @@ with open("Everything-1.4.1.1022.x86.en-US-Setup.exe", "rb") as f:
     h = hashlib.sha256()
     h.update(file_bytes)
     file_hash = h.hexdigest()
+    # or 3.11 alternative
+    digest = hashlib.file_digest(f, 'SHA256').hexdigest()
+    print(digest)
+
 
 print(file_hash == CORRECT_HASH)
+print(digest == CORRECT_HASH)
