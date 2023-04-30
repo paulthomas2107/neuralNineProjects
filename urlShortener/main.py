@@ -1,5 +1,6 @@
 import random
 import string
+import json
 
 from flask import Flask, render_template, redirect, request
 
@@ -23,6 +24,8 @@ def index():
             short_url = generate_short_url()
 
         shortened_urls[short_url] = long_url
+        with open("urls.json", "w") as f:
+            json.dump(shortened_urls, f)
         return f"Shortened URL: {request.url_root}{short_url}"
     return render_template("index.html")
 
