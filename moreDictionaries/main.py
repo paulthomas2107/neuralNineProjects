@@ -23,3 +23,15 @@ grouped_words = defaultdict(list)
 for word in words:
     grouped_words[word[0]].append(word)
 print(grouped_words)
+
+
+tuple_list = [("A", 10), ("B", 233), ("A", 123), ("B", 1098), ("C", 999)]
+group_data = defaultdict(list)
+for key, value in tuple_list:
+    group_data[key].append(value)
+print(group_data)
+group_data = {k: sum(v) for k, v in group_data.items()}
+print(group_data)
+
+
+
