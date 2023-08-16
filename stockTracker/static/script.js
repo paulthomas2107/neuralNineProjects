@@ -55,7 +55,16 @@ function updatePrices() {
             type: 'POST',
             data: JSON.stringify({'ticker': ticker}),
             contentType: 'application/json; charset=utf-8',
-            dataType: 'json'
+            dataType: 'json',
+            success: function(data) {
+                var changePercent = ((data.currentPrice - data.openPrice) / data.openPrice) * 100;
+                var colorClass;
+                if (changePercent <= -2) {
+                    colorClass = 'dark-red'
+                } else if (changePercent < 0) {
+                    colorClass = 'red'
+                }
+            }
         })
     })
 }
