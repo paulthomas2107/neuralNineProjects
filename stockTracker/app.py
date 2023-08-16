@@ -14,7 +14,7 @@ def get_stock_data():
     ticker = request.get_json()['ticker']
     data = yf.Ticker(ticker).history(period='1y')
     return jsonify({'currentPrice': data.iloc[-1].Close,
-                    'OpenPrice': data.iloc[-1].Open})
+                    'openPrice': data.iloc[-1].Open})
 
 
 if __name__ == '__main__':
