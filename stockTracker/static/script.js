@@ -14,6 +14,9 @@ function startUpdateCycle() {
     }, 1000)
 }
 
+function addTickerToGrid() {
+}
+
 function updatePrices() {
 }
 
@@ -22,4 +25,20 @@ $(document).ready(function() {
         addTickerToGrid();
     });
     updatePrices();
+    $('#add-ticker-form').submit(function(e) {
+        e.preventDefault();
+        var newTicker = $('#new-ticker').val().toUpperCase();
+        if (!tickers.includes(newTicker)) {
+            tickers.push(newTicker);
+            localStorage.setItem('tickers', JSON.stringify(tickers));
+            addTickerToGrid(newTicker);
+        }
+        $('new-ticker').val('');
+        updatePrices();
+    })
+
+    $('#tickers-grid').on('click', '.remove-btn', function() {
+        var tickerToRemove = $(this).data('ticker');
+        tickers = tickers.filter(t => t !== tickerToRemove)
+    })
 });
