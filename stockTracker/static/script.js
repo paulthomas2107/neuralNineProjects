@@ -14,11 +14,8 @@ function startUpdateCycle() {
     }, 1000)
 }
 
-function addTickerToGrid() {
-}
 
-function updatePrices() {
-}
+
 
 $(document).ready(function() {
     tickers.forEach(function(ticker) {
@@ -40,5 +37,17 @@ $(document).ready(function() {
     $('#tickers-grid').on('click', '.remove-btn', function() {
         var tickerToRemove = $(this).data('ticker');
         tickers = tickers.filter(t => t !== tickerToRemove)
+        localStorage.setItem('tickers', JSON.stringify(tickers));
+        $(`#${tickerToRemove}`).remove();
     })
+
+    startUpdateCycle();
+
 });
+
+function addTickerToGrid() {
+
+}
+
+function updatePrices() {
+}
