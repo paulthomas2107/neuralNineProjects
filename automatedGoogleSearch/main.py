@@ -1,7 +1,7 @@
 import requests
 
-bollox1 = "AIzaSyDsQAXpOSGpkkUCI7VjIvTBlVcP1Fg8-RM"
-bollox2 = "a37b8c745d35d4d50"
+bollox1 = 112
+bollox2 = 222
 
 search_query = 'football'
 
