@@ -1,6 +1,5 @@
 import pandas as pd
 from flask import Flask, render_template, request, url_for, send_from_directory, redirect
-from openpyxl import Workbook
 
 app = Flask(__name__, template_folder='templates')
 
