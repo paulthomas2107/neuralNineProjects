@@ -16,7 +16,7 @@ win_rate = 0.67
 print(f'Win Rate is {win_rate:.2%}')
 
 # Hex x
-print(f'{name} is {age:x}({age:X}) years old')
+print(f'{name} is {age: x}({age: X}) years old')
 
 # Octal o
 print(f'{name} is {age:o} years old')
