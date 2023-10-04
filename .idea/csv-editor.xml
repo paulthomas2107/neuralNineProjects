@@ -24,6 +24,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/housePricePrediction/.ipynb_checkpoints/housing-checkpoint.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/housePricePrediction/housing.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
