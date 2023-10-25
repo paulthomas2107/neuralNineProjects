@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Flask App</title>
+</head>
+<body style="font-family: Verdana; font-size: 8px;">
+    <h1>{{ some_text }} {{calc_001 / 2}}</h1>
+    <h1>{{ some_text|title }}</h1>
+    <h1>{{ some_number }}</h1>
+    <h1>{{ some_number * 2 }}</h1>
+    <h1>{{ some_text|upper }}</h1>
+    <h1>{{ some_text|replace('l','*') }}</h1>
+    <!-- custom filter -->
+    <h1>{{ some_text|reverse_string }}</h1>
+    <h1>{{ some_text|alternate }}</h1>
+    <h1>{{ some_text|repeat(5) }}</h1>
+    <h1>{{ some_text|alternate|repeat(5) }}</h1>
+    <h1>{{"Paul"|repeat }}</h1>
+</body>
+</html>
