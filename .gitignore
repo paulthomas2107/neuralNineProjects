@@ -1,7 +1,0 @@
-/secureLogin/userdata.db
-/webScraping/scraper/output.json
-/housePricePrediction/housing.csv
-/housePricePrediction/.ipynb_checkpoints/
-/scratch/
-/rotatingProxies/*.txt
-key.txt
