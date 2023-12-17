@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/anomalyDetection/monthly_csv.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/beaconsAnalytics/tracker.csv">
           <value>
             <Attribute>
