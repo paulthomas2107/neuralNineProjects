@@ -29,7 +29,6 @@ def check_match():
             result_label.config(text='Regex Does Not Match Whole Text !', fg='red')
 
 
-
 root = tk.Tk()
 root.title('RegEx Checker')
 
