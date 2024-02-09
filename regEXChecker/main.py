@@ -1,6 +1,9 @@
 import re
 import tkinter as tk
 
+# colou?r
+# {color, colour}
+
 
 def find_matches():
     regex = regex_entry.get()
@@ -16,7 +19,15 @@ def find_matches():
 
 
 def check_match():
-    pass
+    regex = regex_entry.get()
+    text = text_entry.get('1.0', 'end-1c')
+
+    if regex and text:
+        if re.match(regex, text):
+            result_label.config(text='Regex Matched Whole Text !', fg='green')
+        else:
+            result_label.config(text='Regex Does Not Match Whole Text !', fg='red')
+
 
 
 root = tk.Tk()
