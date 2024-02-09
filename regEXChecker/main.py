@@ -3,7 +3,16 @@ import tkinter as tk
 
 
 def find_matches():
-    pass
+    regex = regex_entry.get()
+    text = text_entry.get('1.0', 'end-1c')
+
+    if regex and text:
+        matches = re.finditer(regex, text)
+        for match in matches:
+            start_index = f'1.0 + {match.start()} chars'
+            end_index = f'1.0 + {match.end()} chars'
+            text_entry.tag_add('match', start_index, end_index)
+        text_entry.tag_config('match', foreground='black', background='red', font=('Arial', 10, 'bold'))
 
 
 def check_match():
@@ -28,7 +37,7 @@ text_entry.grid(row=1, column=1, padx=5, pady=5)
 find_button = tk.Button(root, text='Find Matches', command=find_matches)
 find_button.grid(row=2, column=0, columnspan=2, padx=5, pady=5, sticky='we')
 
-check_button = tk.Button(root, text='`Check Match', command=check_match)
+check_button = tk.Button(root, text='Check Match', command=check_match)
 check_button.grid(row=3, column=0, columnspan=2, padx=5, pady=5, sticky='we')
 
 result_label = tk.Label(root, text='', fg='green')
