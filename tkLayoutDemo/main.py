@@ -3,12 +3,25 @@ import tkinter as tk
 root = tk.Tk()
 # root.geometry('300x170')
 
-label1 = tk.Label(root, text='Label 1:')
-entry1 = tk.Entry(root)
-label2 = tk.Label(root, text='Label 2:')
-entry2 = tk.Entry(root)
-button1 = tk.Button(root, text='Button 1')
-button2 = tk.Button(root, text='Button 2')
+frame1 = tk.Frame(root)
+frame2 = tk.Frame(root)
+
+label1 = tk.Label(frame1, text='Label 1:')
+entry1 = tk.Entry(frame1)
+label2 = tk.Label(frame1, text='Label 2:')
+entry2 = tk.Entry(frame1)
+button1 = tk.Button(frame2, text='Button 1')
+button2 = tk.Button(frame2, text='Button 2')
+
+label1.pack()
+entry1.pack()
+label2.pack()
+entry2.pack()
+button1.pack()
+button2.pack()
+frame1.pack(side=tk.LEFT)
+frame2.pack(side=tk.LEFT)
+
 
 """ Pack
 label1.pack(padx=5, pady=5, side=tk.LEFT)
