@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, make_response
 
 app = Flask(__name__)
 
@@ -8,9 +8,20 @@ def index():
     return "<h1>Hello, Paul</h1>"
 
 
-@app.route('/hello')
+@app.route('/hello', methods=['POST', 'GET'])
 def hello():
-    return "Hello World"
+    if request.method == 'GET':
+        return "You made GET request"
+    elif request.method == 'POST':
+        return "You made POST request"
+
+
+@app.route('/hello2', methods=['GET'])
+def hello2():
+    response = make_response()
+    response.status_code = 500
+    response.headers['content-type'] = 'application/octet-stream'
+    return response
 
 
 @app.route('/greet/<name>')
